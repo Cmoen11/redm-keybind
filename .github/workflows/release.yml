@@ -21,9 +21,6 @@ jobs:
       - name: Build Windows executable
         run: go build -o redm-keybind.exe ./main.go
 
-      - name: Copy config.yaml
-        run: cp config.yaml ./
-
       - name: Archive executable and config
         run: powershell Compress-Archive -Path redm-keybind.exe,config.yaml -DestinationPath redm-keybind.zip
 
